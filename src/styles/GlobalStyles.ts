@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -21,6 +22,11 @@ export const GlobalStyles = createGlobalStyle`
       linear-gradient(180deg, #f8f9fb 0%, ${({ theme }) => theme.colors.background} 100%);
     color: ${({ theme }) => theme.colors.text};
     min-width: 320px;
+    overflow-x: hidden;
+  }
+
+  #root {
+    overflow-x: hidden;
   }
 
   img,
