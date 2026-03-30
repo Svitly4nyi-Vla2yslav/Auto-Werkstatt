@@ -46,7 +46,7 @@ const ContactPage = () => {
         eyebrow="Termin & Kontakt"
         title="Der schnellste Weg zur Werkstatt ist der, der für Sie am einfachsten ist."
         description="Anrufen, per WhatsApp schreiben oder direkt die Anfrage absenden. Diese Seite ist bewusst conversion-orientiert aufgebaut, damit lokale Kunden ohne Umwege Kontakt aufnehmen können."
-        primaryCta={{ label: 'Terminformular öffnen', to: '/termin-kontakt' }}
+        primaryCta={{ label: 'Terminformular öffnen', href: '#appointment-form' }}
         secondaryCta={{ label: 'Jetzt anrufen', href: `tel:${contactInfo.phoneRaw}` }}
       />
 
@@ -74,7 +74,7 @@ const ContactPage = () => {
         </QuickGrid>
       </SectionContainer>
 
-      <SectionContainer tone="surface">
+      <SectionContainer id="appointment-form" tone="surface">
         <SectionHeading
           eyebrow="Formulare"
           title="Kontaktformular und Terminwunsch klar getrennt."
