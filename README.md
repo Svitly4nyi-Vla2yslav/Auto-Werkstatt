@@ -26,6 +26,16 @@ The application is built as a modern React single-page application with TypeScri
 - styled-components
 - Framer Motion
 
+## What this project demonstrates
+
+The project is intended as a portfolio example for local-service web development. It demonstrates how a workshop website can combine technical structure with practical business goals:
+
+- clear service presentation for visitors who arrive with a specific repair need
+- trust-building sections such as FAQ, company information and legal pages
+- responsive layouts for customers searching from a phone
+- reusable components that make service and content changes easier to maintain
+- a structure that can later be connected to enquiry forms, analytics, local SEO and booking flows
+
 ## Getting started
 
 ### Prerequisites
@@ -66,6 +76,10 @@ src/
 ├── styles/      # Shared styling
 └── types/       # TypeScript types
 ```
+
+## Before production use
+
+For a real workshop deployment, replace demo content with verified company data, connect the contact flow to a production backend/form provider, review cookie/consent requirements, validate `Impressum` and `Datenschutz`, and configure local SEO/analytics for the actual business location.
 
 ## License
 
