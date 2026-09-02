@@ -61,6 +61,16 @@ npm run build    # Type-check and create a production build
 npm run preview  # Preview the production build locally
 ```
 
+## Verification before deployment
+
+The current production check is the build command:
+
+```bash
+npm run build
+```
+
+It runs the TypeScript project build first (`tsc -b`) and only creates the Vite production bundle if type checking succeeds. The repository does not currently define dedicated lint or automated test scripts, so those should be added before treating the project as production-hardened.
+
 ## Project structure
 
 ```text
