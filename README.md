@@ -2,6 +2,8 @@
 
 A responsive website project for a small-to-medium local car workshop in Germany.
 
+> **Portfolio/demo project:** `AutoWerk Musterstadt` is a fictional workshop used to demonstrate the structure and UX of a local automotive service website. It is not presented as a real customer reference.
+
 The application is built as a modern React single-page application with TypeScript, client-side routing, reusable components, and styled-components.
 
 ## Features
