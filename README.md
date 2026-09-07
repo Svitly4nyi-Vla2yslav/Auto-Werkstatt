@@ -93,6 +93,8 @@ src/
 
 For a real workshop deployment, replace demo content with verified company data, connect the contact flow to a production backend/form provider, review cookie/consent requirements, validate `Impressum` and `Datenschutz`, and configure local SEO/analytics for the actual business location.
 
+The demo `index.html` intentionally uses `noindex, nofollow` so the fictional workshop is not indexed as a real local business. Remove or replace that robots directive only when verified production company data and the final public URL are ready to be indexed.
+
 ## License
 
 This project is licensed under the terms provided in the [LICENSE](LICENSE) file.
