@@ -148,7 +148,13 @@ export const Header = () => {
             <DesktopCTA>
               <CTAButton to="/termin-kontakt">Termin anfragen</CTAButton>
             </DesktopCTA>
-            <MenuButton type="button" onClick={() => setMenuOpen(true)} aria-label="Menü öffnen">
+            <MenuButton
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label="Menü öffnen"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+            >
               <MenuLines aria-hidden="true">
                 <i />
                 <i />

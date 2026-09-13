@@ -88,7 +88,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
   return (
     <Overlay $open={isOpen} onClick={onClose} aria-hidden={!isOpen}>
-      <Panel onClick={(event) => event.stopPropagation()}>
+      <Panel id="mobile-navigation" onClick={(event) => event.stopPropagation()}>
         <CloseRow>
           <CloseButton type="button" onClick={onClose} aria-label="Menü schließen">
             ×
