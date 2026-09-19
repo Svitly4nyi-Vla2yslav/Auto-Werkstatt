@@ -103,10 +103,14 @@ export const ContactForm = () => {
       </Field>
 
       {status === 'success' ? (
-        <Feedback $tone="success">Ihre Anfrage wurde im Demo-Frontend erfolgreich erfasst.</Feedback>
+        <Feedback $tone="success" role="status" aria-live="polite">
+          Ihre Anfrage wurde im Demo-Frontend erfolgreich erfasst.
+        </Feedback>
       ) : null}
       {status === 'error' ? (
-        <Feedback $tone="error">Bitte füllen Sie Name, Nachricht und mindestens eine Kontaktmöglichkeit aus.</Feedback>
+        <Feedback $tone="error" role="alert">
+          Bitte füllen Sie Name, Nachricht und mindestens eine Kontaktmöglichkeit aus.
+        </Feedback>
       ) : null}
 
       <CTAButton type="submit" fullWidth>
