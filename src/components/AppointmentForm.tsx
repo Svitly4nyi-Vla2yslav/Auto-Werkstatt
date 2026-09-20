@@ -167,10 +167,14 @@ export const AppointmentForm = () => {
       </Field>
 
       {status === 'success' ? (
-        <Feedback $tone="success">Ihre Terminanfrage wurde im Demo-Frontend erfolgreich erfasst.</Feedback>
+        <Feedback $tone="success" role="status" aria-live="polite">
+          Ihre Terminanfrage wurde im Demo-Frontend erfolgreich erfasst.
+        </Feedback>
       ) : null}
       {status === 'error' ? (
-        <Feedback $tone="error">Bitte füllen Sie Name, Telefon, Leistung und Wunschtermin aus.</Feedback>
+        <Feedback $tone="error" role="alert">
+          Bitte füllen Sie Name, Telefon, Leistung und Wunschtermin aus.
+        </Feedback>
       ) : null}
 
       <CTAButton type="submit" fullWidth>
