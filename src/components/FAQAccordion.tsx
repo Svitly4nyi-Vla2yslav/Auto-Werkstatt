@@ -49,11 +49,14 @@ const Panel = styled.div`
   }
 `;
 
+// Компонент приймає масив FAQ і повертає акордеон, у якому одночасно відкритий максимум один пункт.
+// Перший елемент відкривається початково; порожній масив дає порожню сітку без помилки.
 export const FAQAccordion = ({ items }: FAQAccordionProps) => {
   const [openId, setOpenId] = useState<string>(items[0]?.id ?? '');
 
   return (
     <Wrap>
+      {/* Для кожного пункту стан відкриття обчислюється зі спільного openId. */}
       {items.map((item) => {
         const isOpen = item.id === openId;
 
@@ -72,6 +75,7 @@ export const FAQAccordion = ({ items }: FAQAccordionProps) => {
               aria-expanded={isOpen}
               aria-controls={`faq-panel-${item.id}`}
               id={`faq-trigger-${item.id}`}
+              // Повторне натискання закриває поточний пункт, інакше відкриває вибраний.
               onClick={() => setOpenId(isOpen ? '' : item.id)}
             >
               {item.question}
