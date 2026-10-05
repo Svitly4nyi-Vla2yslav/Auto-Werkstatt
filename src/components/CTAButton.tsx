@@ -6,6 +6,8 @@ import {
   type BaseActionProps,
 } from './buttonStyles';
 
+// Компонент приймає спільні властивості CTA та повертає Router-посилання, зовнішній anchor або button.
+// Пріоритет вибору — to, потім href; без обох значень рендериться кнопка з переданим type.
 export const CTAButton = ({
   children,
   to,
@@ -17,6 +19,7 @@ export const CTAButton = ({
   rel,
   onClick,
 }: BaseActionProps) => {
+  // Внутрішня навігація не перезавантажує SPA та має найвищий пріоритет.
   if (to) {
     return (
       <PrimaryLink to={to} $fullWidth={fullWidth} aria-label={ariaLabel} onClick={onClick}>
@@ -26,6 +29,7 @@ export const CTAButton = ({
     );
   }
 
+  // Звичайний anchor зберігає target/rel для телефонних, поштових або зовнішніх адрес.
   if (href) {
     return (
       <PrimaryAnchor
@@ -42,6 +46,7 @@ export const CTAButton = ({
     );
   }
 
+  // Fallback повертає семантичну кнопку; onClick лишається під контролем батьківського компонента.
   return (
     <PrimaryButton type={type} $fullWidth={fullWidth} aria-label={ariaLabel} onClick={onClick}>
       {children}
