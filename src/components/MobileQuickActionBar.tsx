@@ -29,6 +29,11 @@ const PhoneContent = styled.span`
   gap: ${({ theme }) => theme.spacing(2)};
 `;
 
+/**
+ * Показує на малих екранах дві постійні дії: системний телефонний виклик
+ * на нормалізований номер і внутрішній перехід до форми запису.
+ * На ширині md та більше панель приховується стилями.
+ */
 export const MobileQuickActionBar = () => (
   <Wrapper>
     <SecondaryButton href={`tel:${contactInfo.phoneRaw}`} fullWidth inverse>
