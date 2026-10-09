@@ -120,10 +120,15 @@ const MenuLines = styled.span`
   }
 `;
 
+/**
+ * Формує адаптивну шапку з основною навігацією, телефонною дією та CTA запису.
+ * На вузьких екранах керує відкриттям MobileMenu і передає йому callback закриття.
+ */
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Після переходу на інший pathname закриває мобільний оверлей, щоб він не перекривав нову сторінку.
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
@@ -134,6 +139,7 @@ export const Header = () => {
         <Inner>
           <Logo />
           <Nav aria-label="Hauptnavigation">
+            {/* end для кореневого маршруту не дає Home залишатися активним на всіх вкладених URL. */}
             {primaryNavigation.map((item) => (
               <NavItem key={item.to} to={item.to} end={item.to === '/'}>
                 {item.label}
