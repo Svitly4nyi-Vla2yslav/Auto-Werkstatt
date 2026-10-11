@@ -256,6 +256,11 @@ const points = [
   { top: '61%', left: '77%', delay: '-2.2s' },
 ];
 
+/**
+ * Рендерить декоративний, недоступний для assistive technology фон першого екрана.
+ * Масиви координат породжують стабільні scan-line, streak і accent-point шари, а CSS
+ * повністю вимикає їхні анімації за `prefers-reduced-motion: reduce`.
+ */
 export const HeroBackgroundVisual = () => (
   <Wrapper aria-hidden="true">
     <PhotoLayer />
