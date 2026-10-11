@@ -17,6 +17,11 @@ interface IconProps {
   size?: number;
 }
 
+/**
+ * Вибирає inline-SVG за типізованим ім’ям і застосовує спільний квадратний розмір.
+ * Іконки успадковують колір через `currentColor`, приховані від assistive technology,
+ * а захисна default-гілка повертає `null` для невідомого runtime-значення.
+ */
 export const Icon = ({ name, size = 22 }: IconProps) => {
   const commonProps = {
     width: size,
