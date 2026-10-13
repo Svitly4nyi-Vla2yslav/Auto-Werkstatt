@@ -50,6 +50,11 @@ const Highlight = styled.div`
   font-size: 0.85rem;
 `;
 
+/**
+ * Перетворює один Testimonial на семантичну картку відгуку.
+ * З testimonial читає акцент, цитату, ім'я та автомобіль; під час появи
+ * у viewport запускає спільну fade-up анімацію без інших побічних ефектів.
+ */
 export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => (
   <Card
     variants={fadeUpVariants}
