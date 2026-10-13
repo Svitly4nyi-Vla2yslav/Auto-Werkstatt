@@ -40,6 +40,11 @@ const Copy = styled.p`
   line-height: 1.7;
 `;
 
+/**
+ * Показує один крок процесу з двозначним номером, заголовком і описом.
+ * index форматується через padStart, а картка запускає fade-up анімацію,
+ * коли потрапляє у viewport; компонент не змінює зовнішній стан.
+ */
 export const ProcessStep = ({ index, title, description }: ProcessStepProps) => (
   <Card
     variants={fadeUpVariants}
