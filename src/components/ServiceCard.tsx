@@ -82,6 +82,10 @@ const ServiceLink = styled(Link)`
   }
 `;
 
+/**
+ * Відображає послугу з іконкою, перевагами та посиланням на запис.
+ * Приймає опис Service; compact скорочує текст і внутрішні відступи, не змінюючи маршрут CTA.
+ */
 export const ServiceCard = ({ service, compact }: ServiceCardProps) => (
   <Card
     $compact={compact}
@@ -111,3 +115,4 @@ export const ServiceCard = ({ service, compact }: ServiceCardProps) => (
     </ServiceLink>
   </Card>
 );
+
