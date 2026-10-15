@@ -47,6 +47,10 @@ const Content = styled.div`
   line-height: 1.7;
 `;
 
+/**
+ * Відображає інформаційну картку із заголовком, необов'язковою іконкою та довільним вмістом.
+ * Анімація появи запускається під час входження картки в область перегляду.
+ */
 export const InfoCard = ({ icon, title, children }: InfoCardProps) => (
   <Card
     variants={fadeUpVariants}
@@ -61,3 +65,4 @@ export const InfoCard = ({ icon, title, children }: InfoCardProps) => (
     <Content>{children}</Content>
   </Card>
 );
+
