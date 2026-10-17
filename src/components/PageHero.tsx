@@ -52,6 +52,10 @@ const Actions = styled.div`
   gap: ${({ theme }) => theme.spacing(3)};
 `;
 
+/**
+ * Формує універсальний заголовок сторінки з анімованим текстом і необов'язковими CTA.
+ * Приймає eyebrow, title, description та до двох посилань; блок дій не рендериться без кнопок.
+ */
 export const PageHero = ({
   eyebrow,
   title,
