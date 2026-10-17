@@ -28,6 +28,10 @@ const IconWrap = styled.span`
   background: rgba(255, 255, 255, 0.12);
 `;
 
+/**
+ * Відображає компактний бейдж довіри з піктограмою підтвердження та переданим підписом.
+ * Компонент приймає лише label, повертає оформлений елемент і не має побічних ефектів.
+ */
 export const TrustBadge = ({ label }: TrustBadgeProps) => (
   <Badge>
     <IconWrap>
