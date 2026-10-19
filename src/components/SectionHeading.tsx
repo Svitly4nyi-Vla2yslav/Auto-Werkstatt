@@ -43,6 +43,10 @@ const Wrapper = styled(motion.div)<{ $align: 'left' | 'center'; $light?: boolean
   }
 `;
 
+/**
+ * Формує спільний заголовок секції з необов'язковими eyebrow та описом.
+ * align керує вирівнюванням, light — контрастною палітрою, а motion-токени запускають появу у viewport.
+ */
 export const SectionHeading = ({
   eyebrow,
   title,
