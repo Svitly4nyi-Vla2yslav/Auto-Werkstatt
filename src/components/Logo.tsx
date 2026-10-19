@@ -36,6 +36,10 @@ interface LogoProps {
   inverted?: boolean;
 }
 
+/**
+ * Повертає брендоване Router-посилання на головну сторінку.
+ * Необов'язковий inverted перемикає кольори тексту для темного фону; компонент не має локального стану.
+ */
 export const Logo = ({ inverted }: LogoProps) => (
   <Brand to="/" aria-label="AutoWerk Musterstadt Startseite" $inverted={inverted}>
     <Mark />
