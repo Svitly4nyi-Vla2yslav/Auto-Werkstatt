@@ -1,5 +1,10 @@
 import type { SVGProps } from 'react';
 
+/**
+ * Рендерить масштабовану SVG-марку, успадковуючи колір через `currentColor`.
+ * Усі стандартні SVG-властивості передаються на кореневий елемент, тому споживач
+ * керує розміром, доступністю та додатковими атрибутами без зміни самої графіки.
+ */
 export const BrandMark = (props: SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <rect x="6" y="6" width="60" height="60" rx="18" fill="currentColor" />
