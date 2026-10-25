@@ -33,9 +33,15 @@ const pageTransition = {
   exit: { opacity: 0, y: -10, transition: { duration: 0.24 } },
 };
 
+/**
+ * Зіставляє pathname з ліниво завантажуваною сторінкою всередині спільного Layout.
+ * Зміна маршруту запускає exit/enter анімацію, невідомі URL перенаправляються на головну.
+ */
 const AnimatedRoutes = () => {
   const location = useLocation();
 
+  // Обгортає готовий React-вузол однаковими станами появи й зникнення.
+  // Функція не змінює сторінку та повертає нову анімовану оболонку.
   const withTransition = (page: ReactNode) => (
     <PageShell
       initial={pageTransition.initial}
@@ -66,6 +72,10 @@ const AnimatedRoutes = () => {
   );
 };
 
+/**
+ * Надає BrowserRouter усьому застосунку та синхронізує прокрутку з переходами.
+ * Компонент не приймає аргументів і повертає налаштоване дерево маршрутів.
+ */
 export const AppRouter = () => (
   <BrowserRouter>
     <ScrollToTop />
