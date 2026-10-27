@@ -19,6 +19,11 @@ const Grid = styled.div`
   }
 `;
 
+/**
+ * Будує темну секцію процесу з централізованого масиву processSteps.
+ * Позиція елемента перетворюється на номер від 1, а ProcessStep відповідає за формат і reveal-анімацію.
+ * Компонент не приймає аргументів і не має побічних ефектів.
+ */
 export const ProcessSection = () => (
   <SectionContainer tone="dark">
     <SectionHeading
