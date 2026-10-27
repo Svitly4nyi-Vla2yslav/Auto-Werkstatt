@@ -21,6 +21,10 @@ const Sidebar = styled.div`
   gap: ${({ theme }) => theme.spacing(5)};
 `;
 
+/**
+ * Складає короткий FAQ-блок із перших чотирьох записів і посиланням на повну сторінку.
+ * Компонент не приймає аргументів і не змінює дані: faqs.slice створює лише вибірку для відображення.
+ */
 export const FaqPreviewSection = () => (
   <SectionContainer>
     <Layout>
