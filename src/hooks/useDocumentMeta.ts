@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 /**
- * Оновлює заголовок документа та вміст meta description після зміни аргументів.
- * Якщо потрібного meta-тега ще немає, створює його й додає до `document.head`;
- * хук нічого не повертає та навмисно залишає останні метадані після unmount.
+ * Приймає title і description та нічого не повертає.
+ * Після зміни аргументів записує document.title, знаходить або створює meta[name='description']
+ * і оновлює його content. Cleanup відсутній навмисно: останні метадані залишаються після unmount.
  */
 export const useDocumentMeta = (title: string, description: string) => {
   useEffect(() => {
