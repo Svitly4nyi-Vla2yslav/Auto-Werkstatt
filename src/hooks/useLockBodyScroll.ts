@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
 /**
- * Блокує прокрутку сторінки через `body.style.overflow`, коли `isLocked` дорівнює true.
- * Перед зміною запам'ятовує inline-значення та відновлює саме його під час очищення,
- * тому не стирає стиль, установлений іншою частиною застосунку до виклику хука.
+ * Приймає прапорець блокування й нічого не повертає.
+ * За true зберігає поточний inline body.style.overflow, встановлює hidden і відновлює
+ * саме попереднє значення під час cleanup; за false не змінює DOM і не реєструє cleanup.
  */
 export const useLockBodyScroll = (isLocked: boolean) => {
   useEffect(() => {
