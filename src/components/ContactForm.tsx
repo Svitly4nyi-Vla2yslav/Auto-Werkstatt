@@ -26,18 +26,28 @@ const initialState: ContactFormState = {
   message: '',
 };
 
-// ContactForm збирає контактний запит у локальному стані та демонструє результат без надсилання даних на сервер.
+/**
+ * Збирає контактний запит у контрольованому локальному стані.
+ * Повертає демонстраційну форму з доступними success/error повідомленнями, але не надсилає
+ * персональні дані на сервер і не викликає зовнішні сервіси.
+ */
 export const ContactForm = () => {
   const [formState, setFormState] = useState<ContactFormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'submitting'>('idle');
 
-  // handleChange приймає ключ поля і нове значення, оновлюючи лише відповідну частину formState.
+    /**
+   * Приймає ключ ContactFormState і нове значення, оновлюючи лише відповідне поле.
+   * Решта введених даних копіюється без мутації попереднього стану.
+   */
   const handleChange = (field: keyof ContactFormState, value: string) => {
     setFormState((current) => ({ ...current, [field]: value }));
   };
 
-  // handleSubmit зупиняє браузерне надсилання, перевіряє ім’я, повідомлення й хоча б один контактний канал.
-  // Після успішної перевірки лише імітує затримку 900 мс, показує success та очищає форму; HTTP-запиту немає.
+  /**
+   * Зупиняє браузерне надсилання та вимагає ім’я, повідомлення й хоча б один контактний канал.
+   * Після успішної перевірки імітує затримку 900 мс, показує success і очищає форму;
+   * HTTP-запиту та збереження введених значень немає.
+   */
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
