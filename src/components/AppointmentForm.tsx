@@ -36,18 +36,28 @@ const initialState: AppointmentFormState = {
   issue: '',
 };
 
-// AppointmentForm збирає бажану послугу, дату та контактні дані в локальному стані; реального бронювання не створює.
+/**
+ * Збирає бажану послугу, дату, автомобіль і контактні дані в контрольованому локальному стані.
+ * Повертає анімовану демонстраційну форму: реального бронювання чи мережевого запиту не створює,
+ * а статуси success/error/submitting використовує лише для зворотного зв’язку в інтерфейсі.
+ */
 export const AppointmentForm = () => {
   const [formState, setFormState] = useState<AppointmentFormState>(initialState);
   const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'submitting'>('idle');
 
-  // handleChange приймає типізований ключ AppointmentFormState і замінює лише вибране поле.
+    /**
+   * Приймає типізований ключ AppointmentFormState і новий рядок.
+   * Функціональне оновлення зберігає решту полів без мутації попереднього об’єкта.
+   */
   const handleChange = (field: keyof AppointmentFormState, value: string) => {
     setFormState((current) => ({ ...current, [field]: value }));
   };
 
-  // handleSubmit скасовує стандартне надсилання та вимагає ім’я, телефон, послугу й дату.
-  // Успішний сценарій імітує 900 мс очікування, після чого показує підтвердження й повертає початкові значення без API-виклику.
+  /**
+   * Скасовує стандартне надсилання й перевіряє ім’я, телефон, послугу та дату.
+   * За помилки встановлює error; успішний сценарій імітує 900 мс очікування,
+   * показує підтвердження та повертає поля до initialState без API-виклику.
+   */
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
