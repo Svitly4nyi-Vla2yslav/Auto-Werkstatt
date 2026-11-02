@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 /**
- * Стежить за pathname React Router і після кожної зміни негайно повертає сторінку нагору.
- * Компонент не рендерить розмітку; його побічний ефект — виклик `window.scrollTo`
- * з `behavior: 'auto'`, тому перехід не запускає плавну анімацію.
+ * Стежить лише за `pathname` React Router і після переходу на інший шлях негайно повертає сторінку нагору.
+ * Зміни query-параметрів або hash на тому самому шляху повторно ефект не запускають.
+ * Компонент не приймає аргументів і не рендерить розмітку; єдиний побічний ефект —
+ * `window.scrollTo` з `behavior: 'auto'`, тому анімація та асинхронне очищення не потрібні.
  */
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
