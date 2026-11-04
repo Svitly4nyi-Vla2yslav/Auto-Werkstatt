@@ -83,11 +83,18 @@ const Meta = styled.div`
   line-height: 1.6;
 `;
 
+/**
+ * Рендерить мобільну навігацію поверх сторінки та блокує прокручування документа,
+ * доки `isOpen` має значення `true`. Натискання тла або навігаційного пункту викликає
+ * `onClose`, а взаємодія всередині панелі не спливає до тла.
+ */
 export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  // Хук відновлює попередній overflow під час закриття меню або демонтажу компонента.
   useLockBodyScroll(isOpen);
 
   return (
     <Overlay $open={isOpen} onClick={onClose} aria-hidden={!isOpen}>
+      {/* Зупиняємо спливання, щоб клік по вмісту панелі не закрив меню як клік по тлу. */}
       <Panel id="mobile-navigation" onClick={(event) => event.stopPropagation()}>
         <CloseRow>
           <CloseButton type="button" onClick={onClose} aria-label="Menü schließen">
