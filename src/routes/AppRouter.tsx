@@ -7,6 +7,7 @@ import { Layout } from '../components/Layout';
 import { smoothRevealTransition } from '../components/motionTokens';
 import { ScrollToTop } from './ScrollToTop';
 
+// Кожен маршрут завантажує свій chunk лише під час першого відкриття сторінки.
 const HomePage = lazy(() => import('../pages/HomePage'));
 const ServicesPage = lazy(() => import('../pages/ServicesPage'));
 const AboutPage = lazy(() => import('../pages/AboutPage'));
@@ -35,7 +36,8 @@ const pageTransition = {
 
 /**
  * Зіставляє pathname з ліниво завантажуваною сторінкою всередині спільного Layout.
- * Зміна маршруту запускає exit/enter анімацію, невідомі URL перенаправляються на головну.
+ * Зміна pathname перемонтовує Routes через key і запускає exit/enter анімацію; зміна лише hash цього не робить.
+ * Невідомі URL перенаправляються на головну без додавання зайвого запису в історію.
  */
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -73,7 +75,7 @@ const AnimatedRoutes = () => {
 };
 
 /**
- * Надає BrowserRouter усьому застосунку та синхронізує прокрутку з переходами.
+ * Надає BrowserRouter усьому застосунку, а ScrollToTop синхронізує прокрутку з переходами.
  * Компонент не приймає аргументів і повертає налаштоване дерево маршрутів.
  */
 export const AppRouter = () => (
