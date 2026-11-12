@@ -35,6 +35,10 @@ const ServicesGrid = styled.div`
   }
 `;
 
+/**
+ * Формує сторінку послуг із централізованого масиву services та спільних маркетингових секцій.
+ * Під час монтування синхронізує title/description документа; локального стану й мережевих запитів не має.
+ */
 const ServicesPage = () => {
   useDocumentMeta(routeMeta.services.title, routeMeta.services.description);
 
