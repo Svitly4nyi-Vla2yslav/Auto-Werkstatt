@@ -35,8 +35,14 @@ const FormGrid = styled.div`
   }
 `;
 
+// Номер уже зберігається у міжнародному форматі; wa.me очікує його без початкового знака «+».
 const WhatsAppLink = `https://wa.me/${contactInfo.whatsappRaw.replace('+', '')}`;
 
+/**
+ * Збирає прямі телефонний/WhatsApp-канали, демонстраційні форми та секцію розташування.
+ * Під час рендеру синхронізує метадані документа; сама сторінка не надсилає введені дані
+ * й делегує поведінку форм компонентам AppointmentForm і ContactForm.
+ */
 const ContactPage = () => {
   useDocumentMeta(routeMeta.contact.title, routeMeta.contact.description);
 
