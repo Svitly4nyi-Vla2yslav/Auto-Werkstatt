@@ -89,6 +89,12 @@ src/
 └── types/       # TypeScript types
 ```
 
+## Поведінка форми запису
+
+`AppointmentForm` є демонстраційною контрольованою React-формою. Вона перевіряє ім’я, телефон, послугу та бажану дату, показує локальний стан надсилання приблизно 900 мс і потім очищає поля. Мережевий запит, бронювання або збереження персональних даних не виконуються.
+
+Для реального сайту цей сценарій потрібно під’єднати до перевіреного backend або form provider, додати серверну валідацію та визначити правила обробки персональних даних.
+
 ## Before production use
 
 For a real workshop deployment, replace demo content with verified company data, connect the contact flow to a production backend/form provider, review cookie/consent requirements, validate `Impressum` and `Datenschutz`, and configure local SEO/analytics for the actual business location.
