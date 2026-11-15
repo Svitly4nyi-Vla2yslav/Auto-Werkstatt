@@ -95,6 +95,14 @@ src/
 
 Для реального сайту цей сценарій потрібно під’єднати до перевіреного backend або form provider, додати серверну валідацію та визначити правила обробки персональних даних.
 
+## Ручна перевірка інтерфейсу
+
+1. Відкрийте мобільне меню клавіатурою й перевірте, що фокус видно, а прокручування сторінки заблоковане лише поки меню відкрите.
+2. Перейдіть маршрутом і переконайтеся, що меню закривається автоматично.
+3. Відкрийте FAQ кнопками та перевірте стан `aria-expanded` і зв’язок кнопки з панеллю.
+4. Надішліть форму без обов’язкових полів, а потім із тестовими даними; мережевого запиту бути не повинно.
+5. Увімкніть `prefers-reduced-motion: reduce`: декоративні анімації hero мають зупинитися.
+
 ## Before production use
 
 For a real workshop deployment, replace demo content with verified company data, connect the contact flow to a production backend/form provider, review cookie/consent requirements, validate `Impressum` and `Datenschutz`, and configure local SEO/analytics for the actual business location.
