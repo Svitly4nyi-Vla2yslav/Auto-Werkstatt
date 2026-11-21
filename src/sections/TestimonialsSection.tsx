@@ -15,6 +15,11 @@ const Grid = styled.div`
   }
 `;
 
+/**
+ * Формує секцію відгуків із централізованого масиву `testimonials`.
+ * Компонент не приймає аргументів і повертає адаптивну сітку карток; стабільним ключем є `testimonial.id`.
+ * Дані не змінюються, локальний стан і побічні ефекти відсутні.
+ */
 export const TestimonialsSection = () => (
   <SectionContainer tone="surface">
     <SectionHeading
