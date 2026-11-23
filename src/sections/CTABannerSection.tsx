@@ -38,6 +38,14 @@ const Actions = styled.div`
   gap: ${({ theme }) => theme.spacing(3)};
 `;
 
+/**
+ * Рендерить акцентний CTA-банер із текстом, посиланням на форму та прямим дзвінком.
+ *
+ * @param title — необов'язковий заголовок; без значення використовується текст про швидку оцінку.
+ * @param description — необов'язкове пояснення під заголовком із власним текстом за замовчуванням.
+ * @returns Презентаційну секцію без локального стану.
+ * @sideEffects Не виконує запитів; телефонне посилання лише використовує contactInfo.phoneRaw.
+ */
 export const CTABannerSection = ({
   title = 'Brauchen Sie einen Termin oder eine schnelle Einschätzung?',
   description = 'Rufen Sie an, schreiben Sie per WhatsApp oder senden Sie direkt eine Anfrage. Wir halten die Wege kurz und sagen Ihnen ehrlich, wann wir helfen können.',
